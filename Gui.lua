@@ -47,8 +47,8 @@ function ReturnRaidManager:CreateSavedLayoutButton(name, idx)
 
     button:Show()
     button:SetText(name)
-    button:SetScript("OnClick", function()
-        if arg1 == "RightButton" then
+    button:SetScript("OnClick", function(_, btn)
+        if btn == "RightButton" then
             self:ToggleQuestionFrame("Do you really want to delete\nthe '" .. name .. "' layout?",
                                      function() self:RemoveSavedRaidLayout(name) end)
         else
